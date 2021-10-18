@@ -6,6 +6,10 @@ import Box from '@mui/material/Box';
 export default function Profile(){
 
 
-    return 
+    return (
+        <Card>
+            
+        </Card>
+    )
 
 }

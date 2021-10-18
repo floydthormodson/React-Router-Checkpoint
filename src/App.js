@@ -1,17 +1,18 @@
 import './App.css';
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import {Route, Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Home from './Components/Home.js';
 import About from './Components/About.js';
 import ProfileList from './Components/ProfileList.js';
-import Contacts from './Components/Contacts'
+
+
 
 
 function App() {
 
-  const buttonStyle = { width: 150, backgroundColor: "green" };
+  const buttonStyle = { width: 150, backgroundColor: "yellow", color: "black" };
 
 
   const profileContent = { newsArticles:[
@@ -40,10 +41,20 @@ contactProfiles: [
         lastName: "MacDougal",
         birthday: "09/15/1886 00:00:00",
         profileImage: "https://simpsons.fandom.com/wiki/William_MacDougal/Gallery?file=Willieismad.jpg"
-    }
+    },
+    {
+      firstName: "Homer",
+      lastName: "Simpson",
+      birthday: "09/15/1886 00:00:00",
+      profileImage: "https://upload.wikimedia.org/wikipedia/en/f/fb/Homers_Barbershop_Quartet.PNG"
+  },
+  {
+    firstName: "Frank",
+    lastName: "Grimes",
+    birthday: "09/15/1886 00:00:00",
+    profileImage: "https://www.seekpng.com/ima/u2q8w7y3y3e6o0i1/"
+}
 ]};
-
-
 
   return (
     <div className="container">
@@ -54,13 +65,10 @@ contactProfiles: [
           <Link to="/"><Button variant="contained" sx={buttonStyle}>Home</Button></Link>
         </Stack>
       </div>
-      <div className = "side-bar">
-            <Route path="/" render={(props) => (<Contacts {...props} contacts={profileContent?.contactProfiles}/>)}/>
-      </div>
       <div className="main-display">
-          <Route exact path="/" render={(props) => (<Home {...props} articles={profileContent?.newsArticles} />)}/>
-          <Route path="/about" render={(props) => (<About {...props}/>)}/>
-          <Route path="/profile" render={(props) => (<ProfileList {...props}/>)}/>
+          <Route exact path="/" render={(props) => (<Home articles={profileContent?.newsArticles} contacts={profileContent?.contactProfiles}/>)}/>
+          <Route path="/about" render={(props) => (<About/>)}/>
+          <Route path="/profiles" render={(props) => (<ProfileList profiles={profileContent?.contactProfiles}/>)}/>
           
       </div>
     </div>

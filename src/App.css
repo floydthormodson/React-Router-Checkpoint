@@ -1,8 +1,8 @@
 .container {
   text-align: center;
   display: grid;
-  grid-template-columns: 90vh;
-  grid-template-rows: 10vh;
+  grid-template-columns: 20vw;
+  grid-template-rows: 10vh ;
   height: 100vh;
 }
 
@@ -21,20 +21,14 @@
 }
 
 .main-display{
+  background-color: grey;
   grid-row: 2;
-  grid-column-start: 2;
+  grid-column-start: 1;
   grid-column-end: 3;
   flex-direction:row;
 }
 
 .side-bar{
-  grid-row:2 ;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  flex-direction: column;
-}
-
-.big-portion{
   grid-row:2 ;
   grid-column-start: 1;
   grid-column-end: 2;
