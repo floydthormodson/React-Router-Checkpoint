@@ -12,13 +12,14 @@ export default function ProfileList(props){
 
     const {currentProfile, setCurrentProfile} =useState();
 
-    console.log("in ProfileList Component:", props.profiles)
+    console.log("in ProfileList Component:", props.profiles);
+    console.log("currentProfile is:", currentProfile)
 
     return(
         <div>
         <Stack direction="column" sx={{mx:5, width: "100%"}}>
             {props.profiles.map((element) => (
-                    <Card sx={{mx:10, width: "20%"}}>
+                    <Card sx={{mx:10, width: "20%", backgroundColor: "yellow"}}>
                         <CardMedia
                         component="img"sx={{ width: "15vw", display: "inline-flex", mx: "auto" }}
                         image={element?.profileImage}
@@ -28,7 +29,7 @@ export default function ProfileList(props){
                             {element?.firstName}<br/>
                             {element?.lastName}<br/>
                             {element?.birthday}<br/>
-                            <Button><Link to="/profiles/:id">View</Link></Button>
+                            <Button onCLick={()=> setCurrentProfile(element)}><Link to="/profiles/:id">View</Link></Button>
                         </CardContent>
                     </Card>
                 

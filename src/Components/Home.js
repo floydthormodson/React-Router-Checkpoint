@@ -11,7 +11,7 @@ export default function Home(props){
 
     return(
         <Stack direction="row" sx={{mx:autocompleteClasses, width: "100%"}}>
-            <Card>
+            <Card sx={{backgroundColor: "yellow"}}>
                 <CardContent>
                     <h2>Your Contacts</h2>
                 </CardContent>
@@ -31,7 +31,7 @@ export default function Home(props){
             ))};
             </Card>
             <Card >
-                <CardContent>
+                <CardContent sx={{backgroundColor: "yellow"}}>
                     <h2>Your News</h2>
                     <h3><ul>{props.articles.map((element,index) => (<li key={index}>{element.title}<h5>{element.article}</h5></li>))}</ul></h3>
                 </CardContent>
